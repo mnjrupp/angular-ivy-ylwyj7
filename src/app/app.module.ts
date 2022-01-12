@@ -18,7 +18,7 @@ import { CustomerComponent } from './customer/customer.component';
      HttpClientModule,
      ReactiveFormsModule,
      RouterModule.forRoot([
-       { path: '', component: AppComponent, pathMatch: 'full' },
+       //{ path: '', component: AppComponent, pathMatch: 'full' },
        //{ path: 'counter', component: CounterComponent },
       // { path: 'fetch-data', component: FetchDataComponent },
        { path: 'loanofficer', component: LoanOfficerComponent },
