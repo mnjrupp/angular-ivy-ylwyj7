@@ -1,0 +1,495 @@
+
+
+  <h3 class="shadow p-3 mb-5 bg-body rounded">PERSONAL INFORMATION</h3>
+  <div class="container overflow-hidden">
+    <form [formGroup]="formValue" (submit)="getCOF()">
+      <div class="row">
+        <div class="col">
+          <h5 class="d-flex justify-content-center">Borrower Details</h5>
+        </div>
+      </div>
+      <div class="row align-items-start">
+
+        <div class="col">
+          <div class="mb-1 p-1 border bg-light">
+            <small class="text-muted">Applicant Name:</small>
+          </div>
+          <div class="mb-1 p-1 border bg-light">
+            <small class="text-muted">Phone #:</small>
+          </div>
+          <div class="mb-1 p-1 border bg-light">
+            <small class="text-muted">Customer Address:</small>
+          </div>
+          <div class="mb-1 p-1 border bg-light">
+            <small class="text-muted">Estimated Start Date of Loan:</small>
+          </div>
+        </div>
+
+        <div class="col p-1">
+
+          <div class="mb-1">
+            <input type="text" class="form-control form-control-sm" formControlName="applicationName" id="applicationName" placeholder="Joe Doe">
+          </div>
+          <div class="mb-1">
+            <input type="text" class="form-control form-control-sm" formControlName="phoneNumber" id="phoneNumber" placeholder="">
+          </div>
+          <div class="mb-1">
+            <textarea class="form-control form-control-sm" formControlName="address" id="customeraddress" rows="1"></textarea>
+          </div>
+          <div class="mb-1">
+            <input type="text" class="form-control form-control-sm" formControlName="loanDate" id="loanDate" placeholder="">
+          </div>
+
+        </div>
+
+        <div class="col">
+
+          <div class="mb-1 p-1 border bg-light">
+            <small class="text-muted">Loan Officer:</small>
+          </div>
+          <div class="mb-1 p-1 border bg-light">
+            <small class="text-muted">Location:</small>
+          </div>
+          <div class="mb-1 p-1 border bg-light">
+            <small class="text-muted">Credit Office Loc:</small>
+          </div>
+          <div class="mb-1 p-1 border bg-light">
+            <small class="text-muted">Date of Calculation:</small>
+          </div>
+        </div>
+        <div class="col p-1">
+          <div class="mb-1">
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="loanOfficer" id="loanOfficer">
+              <option selected></option>
+              <option selected>Aaron Nors</option>
+              <option selected>Adam Ledlow</option>
+              <option selected>Andrew Polk</option>
+              <option selected>Barbara Golden</option>
+              <option selected>Bradley Horry</option>
+              <option selected>Craig Cheyne</option>
+              <option selected>Craig Hartman</option>
+              <option selected>Gerrett Edwards</option>
+              <option selected>Gerrit Schouten</option>
+              <option selected>Hannah Gaddy</option>
+              <option selected>James Fuchs</option>
+              <option selected>Jason Jones</option>
+              <option selected>Jennifer White</option>
+              <option selected>Justin Kelly</option>
+              <option selected>Justin Wiethorn</option>
+              <option selected>Kregg Slakey</option>
+              <option selected>Kyle Felan</option>
+              <option selected>Lindsey Ellsworth</option>
+              <option selected>Macy Blanckenship</option>
+              <option selected>Matt Lynch</option>
+              <option selected>Nathan Winstead</option>
+              <option selected>Patrick Hejl</option>
+              <option selected>Randy Meinke</option>
+              <option selected>Robert Humphreys</option>
+              <option selected>Thomas Bugner</option>
+              <option selected>Thomas Keith</option>
+              <option selected>Todd Reed</option>
+              <option selected>Tyler Rosser</option>
+              <option selected>Walker Dailey</option>
+            </select>
+          </div>
+          <div class="mb-1">
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="branchOffice" id="branchOffice">
+              <option selected></option>
+              <option>Abilene</option>
+              <option>AgriBusiness</option>
+              <option>Cleburne</option>
+              <option>Corsicana</option>
+              <option>Denton</option>
+              <option>Fort Worth</option>
+              <option>Georgetown</option>
+              <option>Hillsboro</option>
+              <option>Lampasas</option>
+              <option>New Boston</option>
+              <option>Paris</option>
+              <option>Sherman</option>
+              <option>Stephenville</option>
+              <option>Sweetwater</option>
+              <option>Waco</option>
+              <option>Weatherford</option>
+            </select>
+          </div>
+          <div class="mb-1">
+            <textarea class="form-control form-control-sm" formControlName="branchaddress" id="branchaddress" rows="1"></textarea>
+          </div>
+          <div>
+            <input type="text" class="form-control form-control-sm" formControlName="calcDate" id="calcDate" placeholder="">
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-start">
+        <h5 class="d-flex justify-content-center">Loan Details</h5>
+        <div class="col" style="width:282px;">
+          <div class=" mb-1 p-1 border bg-light">
+            <small class="text-muted">FSA Guarantee:</small>
+          </div>
+          <div class="mb-1 p-1 border bg-light">
+            <small class="text-muted">Loan type / Collateral type</small>
+          </div>
+          <div class=" mb-1 p-1 border bg-light">
+            <small class="text-muted">Consumer Purpose - Lien position</small>
+          </div>
+          <div class="mb-1 p-1 border bg-light">
+            <small class="text-muted">Loan Amount / Fee</small>
+          </div>
+          <div class=" mb-1 p-1 border bg-light">
+            <small class="text-muted">Payment frequency</small>
+          </div>
+          <div class=" mb-1 p-1 border bg-light">
+            <small class="text-muted">PD/LGD</small>
+          </div>
+          <div class=" mb-1 p-1 border bg-light">
+            <small class="text-muted">Balloon / How many years</small>
+          </div>
+        </div>
+        <div class="col p-1">
+
+          <div class="mb-1">
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="fsaguarantee" id="fsaguarantee">
+              <option selected></option>
+              <option>No</option>
+              <option>Yes</option>
+            </select>
+          </div>
+          <div class="mb-1">
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="loantype" id="loantype">
+              <option selected></option>
+              <option>AgFast</option>
+              <option>AgTerm Loan</option>
+              <option>Construction</option>
+              <option>Equip & Chattel</option>
+              <option>Operating</option>
+            </select>
+          </div>
+          <div class="mb-1">
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="lienpos" id="lienpos">
+              <option selected>N/A</option>
+              <option>Yes - 1st Lien</option>
+              <option>Yes - 2nd Lien</option>
+            </select>
+          </div>
+          <div class="mb-1">
+            <input type="text" class="form-control form-control-sm" formControlName="loanAmnt" id="loanAmnt" placeholder="$0">
+          </div>
+          <div class="mb-1">
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="paymentfreq" id="paymentfreq">
+              <option value="12" selected>Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="2">Semi-Annual</option>
+              <option value="1">Annual</option>
+            </select>
+          </div>
+          <div class="mb-1">
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="pd" id="pd">
+              <option selected></option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+            </select>
+          </div>
+          <div class="mb-1">
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="ballonyrs" id="ballonyrs">
+              <option selected>No</option>
+              <option>Yes</option>
+            </select>
+          </div>
+        </div>
+        <div class="col p-1">
+          <div class="mb-1" style="height:30px"></div>
+          <div class="mb-1">
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="locateral" id="locateral">
+              <option selected></option>
+              <option>Agricultural Land</option>
+              <option>Chattel</option>
+              <option>Homesite</option>
+              <option>Land in Transition</option>
+              <option>Specialized Facility/Agribusiness</option>
+            </select>
+          </div>
+          <div class="mb-1" style="height:30px"></div>
+          <div class="mb-1">
+            <input type="text" class="form-control form-control-sm" formControlName="feeAmnt" id="feeAmnt" placeholder="$0">
+          </div>
+          <div class="mb-1" style="height:30px"></div>
+          <div class="mb-1">
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="lgd" id="lgd">
+              <option selected></option>
+              <option>B-Well</option>
+              <option>D-Adequate</option>
+              <option>E-Marginal</option>
+              <option>F-Under-Secured</option>
+            </select>
+          </div>
+          <div class="mb-1">
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="ballon" id="ballon">
+              <option selected></option>
+              <option value="1">1 Yr</option>
+              <option value="2">2 Yr</option>
+              <option value="3">3 Yr</option>
+              <option value="4">4 Yr</option>
+              <option value="5">5 Yr</option>
+              <option value="6">6 Yr</option>
+              <option value="7">7 Yr</option>
+            </select>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1">
+            <button type="submit" class="btn btn-primary">Get Rates</button>
+            </div>
+          </div>
+        <div class="row align-items-start">
+          <h5 class="d-flex justify-content-center">Rate Scenarios</h5>
+          <div class="col" style="width:282px;">
+            <div class=" mb-1 p-1 border bg-light">
+              <small class="text-muted">Amortization Type:</small>
+            </div>
+            <div class="mb-1 p-1 border bg-light">
+              <small class="text-muted">Amortization Term</small>
+            </div>
+            <div class=" mb-1 p-1 border bg-light">
+              <small class="text-muted">Loan Product</small>
+            </div>
+            <div class="mb-1 p-1 border bg-light">
+              <small class="text-muted">Transfer Option</small>
+            </div>
+            <div class=" mb-1 p-1 border bg-light">
+              <small class="text-muted">Estimated Interest Rate</small>
+            </div>
+            <div class=" mb-1 p-1 border bg-light">
+              <small class="text-muted">Approximate Payment Amount</small>
+            </div>
+          </div>
+          <div class="col p-1">
+
+            <div class="mb-1">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="AmorType1" id="AmorType1">
+                <option selected>P&I</option>
+                <option>P+I</option>
+              </select>
+            </div>
+            <div class="mb-1">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="AmorTerm1" id="AmorTerm1">
+                <option value="20" selected>20YRS</option>
+                <option value="1">1YR</option>
+                <option value="2">2YRS</option>
+                <option value="3">3YRS</option>
+                <option value="4">4YRS</option>
+                <option value="5">5YRS</option>
+                <option value="7">7YRS</option>
+                <option value="10">10YRS</option>
+                <option value="15">15YRS</option>              
+                <option value="25">25YRS</option>
+                <option value="30">30YRS</option>
+              </select>
+            </div>
+            <div class="mb-1">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="loanProd1" id="loanProd1">
+                <option value="20" selected>20YRS FIXED</option>
+                <option value="1">1YR FIXED</option>
+                <option value="2">2YRS FIXED</option>
+                <option value="3">3YRS FIXED</option>
+                <option value="4">4YRS FIXED</option>
+                <option value="5">5YRS FIXED</option>
+                <option value="7">7YRS FIXED</option>
+                <option value="10">10YRS FIXED</option>
+                <option value="15">15YRS FIXED</option>
+                <option value="20">25YRS FIXED</option>
+                <option value="30">30YRS FIXED</option>
+              </select>
+            </div>
+            <div class="mb-1">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="TransferOption1" id="TransferOption1">
+                <option selected>Open Prepayment</option>
+                <option>1-Yr Lock-Out</option>
+                <option>Full Yield</option>
+                <option>Period Lockout</option>
+              </select>
+            </div>
+            <div class="mb-1">
+              <input class="form-control bg-white" type="text" value="" aria-label="readonly input example" formControlName="IntRate1" id="IntRate1" readonly>
+            </div>
+            <div class="mb-1">
+              <input class="form-control" type="text" value="" aria-label="readonly input example" formControlName="PayAmnt1" id="PayAmnt1" readonly>
+            </div>
+          </div>
+          <div class="col p-1">
+
+            <div class="mb-1">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="AmorType2" id="AmorType2">
+                <option selected>P&I</option>
+                <option>P+I</option>
+              </select>
+            </div>
+            <div class="mb-1">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="AmorTerm2" id="AmorTerm2">
+                <option value="20" selected>20YRS</option>
+                <option value="1">1YR</option>
+                <option value="2">2YRS</option>
+                <option value="3">3YRS</option>
+                <option value="4">4YRS</option>
+                <option value="5">5YRS</option>
+                <option value="7">7YRS</option>
+                <option value="10">10YRS</option>
+                <option value="15">15YRS</option>
+                <option value="25">25YRS</option>
+                <option value="30">30YRS</option>
+              </select>
+            </div>
+            <div class="mb-1">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="loanProd2" id="loanProd2">
+                <option value="20" selected>20YRS FIXED</option>
+                <option value="1">1YR FIXED</option>
+                <option value="2">2YRS FIXED</option>
+                <option value="3">3YRS FIXED</option>
+                <option value="4">4YRS FIXED</option>
+                <option value="5">5YRS FIXED</option>
+                <option value="7">7YRS FIXED</option>
+                <option value="10">10YRS FIXED</option>
+                <option value="15">15YRS FIXED</option>
+                <option value="20">25YRS FIXED</option>
+                <option value="30">30YRS FIXED</option>
+              </select>
+            </div>
+            <div class="mb-1">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="TransferOption2" id="TransferOption2">
+                <option selected>Open Prepayment</option>
+                <option>1-Yr Lock-Out</option>
+                <option>Full Yield</option>
+                <option>Period Lockout</option>
+              </select>
+            </div>
+            <div class="mb-1">
+              <input class="form-control bg-white" type="text" value="" aria-label="readonly input example" formControlName="IntRate2" id="IntRate2" readonly>
+            </div>
+            <div class="mb-1">
+              <input class="form-control" type="text" value="" aria-label="readonly input example" formControlName="PayAmnt2" id="PayAmnt2" readonly>
+            </div>
+          </div>
+          <div class="col p-1">
+
+            <div class="mb-1">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="AmorType3" id="AmorType3">
+                <option selected>P&I</option>
+                <option>P+I</option>
+              </select>
+            </div>
+            <div class="mb-1">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="AmorTerm3" id="AmorTerm3">
+                <option value="20" selected>20YRS</option>
+                <option value="1">1YR</option>
+                <option value="2">2YRS</option>
+                <option value="3">3YRS</option>
+                <option value="4">4YRS</option>
+                <option value="5">5YRS</option>
+                <option value="7">7YRS</option>
+                <option value="10">10YRS</option>
+                <option value="15">15YRS</option>
+                <option value="25">25YRS</option>
+                <option value="30">30YRS</option>
+              </select>
+            </div>
+            <div class="mb-1">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="loanProd3" id="loanProd3">
+                <option value="20" selected>20YRS FIXED</option>
+                <option value="1">1YR FIXED</option>
+                <option value="2">2YRS FIXED</option>
+                <option value="3">3YRS FIXED</option>
+                <option value="4">4YRS FIXED</option>
+                <option value="5">5YRS FIXED</option>
+                <option value="7">7YRS FIXED</option>
+                <option value="10">10YRS FIXED</option>
+                <option value="15">15YRS FIXED</option>
+                <option value="20">25YRS FIXED</option>
+                <option value="30">30YRS FIXED</option>
+              </select>
+            </div>
+            <div class="mb-1">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="TransferOption3">
+                <option selected>Open Prepayment</option>
+                <option>1-Yr Lock-Out</option>
+                <option>Full Yield</option>
+                <option>Period Lockout</option>
+              </select>
+            </div>
+            <div class="mb-1">
+              <input class="form-control bg-white" type="text" value="" aria-label="readonly input example" formControlName="IntRate3" id="IntRate3" readonly>
+            </div>
+            <div class="mb-1">
+              <input class="form-control" type="text" value="" aria-label="readonly input example"  formControlName="PayAmnt3" id="PayAmnt3" readonly>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-start">
+        <h5 class="d-flex justify-content-center">Rate & Spread Scenarios</h5>
+        <div class="col" style="width:282px;">
+          <div class="mb-1 p-1 border bg-light" style="height:40px">
+            <small class="text-muted">Recommended Rate</small>
+          </div>
+          <div class="mb-1 p-1 border bg-light" style="height:40px">
+            <small class="text-muted">Recommended Spread</small>
+          </div>
+          <div class=" mb-1 p-1 border bg-light" style="height:40px">
+            <small class="text-muted">Loan Officer Variance</small>
+          </div>
+          <div class="mb-1 p-1 border bg-light" style="height:35px">
+            <small class="text-muted">Final Spread</small>
+          </div>
+        </div>
+        <div class="col p-1">
+          <div class="mb-1">
+            <input class="form-control bg-white" type="text" value="" aria-label="readonly input example" formControlName="RecomRate1" id="RecomRate1" readonly>
+          </div>
+          <div class="mb-1">
+            <input class="form-control" style="background-color: #fd7e14" type="text" value="" aria-label="readonly input example" formControlName="RecomSpread1" id="RecomSpread1" readonly>
+          </div>
+          <div class="mb-1">
+            <input class="form-control bg-white" type="text" value="" aria-label="readonly input example" formControlName="Variance1" id="Variance1">
+          </div>
+          <div class="mb-1">
+            <input class="form-control" style="background-color:#9bc48a" type="text" value="" aria-label="readonly input example" formControlName="finalSpread1" id="finalSpread1" readonly>
+          </div>
+        </div>
+        <div class="col p-1">
+          <div class="mb-1">
+            <input class="form-control bg-white" type="text" value="" aria-label="readonly input example" formControlName="RecomRate2" id="RecomRate2" readonly>
+          </div>
+          <div class="mb-1">
+            <input class="form-control" type="text" style="background-color: #fd7e14" value="" aria-label="readonly input example" formControlName="RecomSpread2" id="RecomSpread2" readonly>
+          </div>
+          <div class="mb-1">
+            <input class="form-control bg-white" type="text" value="" aria-label="readonly input example" formControlName="Variance2" id="Variance2">
+          </div>
+          <div class="mb-1">
+            <input class="form-control" style="background-color:#9bc48a" type="text" value="" aria-label="readonly input example" formControlName="finalSpread2" id="finalSpread2" readonly>
+          </div>
+        </div>
+        <div class="col p-1">
+          <div class="mb-1 vh-25">
+            <input class="form-control bg-white" type="text" value="" aria-label="readonly input example" formControlName="RecomRate3" id="RecomRate3" readonly>
+          </div>
+          <div class="mb-1">
+            <input class="form-control" type="text" style="background-color: #fd7e14" value="" aria-label="readonly input example" formControlName="RecomSpread3" id="RecomSpread3" readonly>
+          </div>
+          <div class="mb-1">
+            <input class="form-control bg-white" type="text" value="" aria-label="readonly input example" formControlName="Variance3" id="Variance3">
+          </div>
+          <div class="mb-1">
+            <input class="form-control" style="background-color:#9bc48a" type="text" value="" aria-label="readonly input example" formControlName="finalSpread3" id="finalSpread3" readonly>
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </div>
