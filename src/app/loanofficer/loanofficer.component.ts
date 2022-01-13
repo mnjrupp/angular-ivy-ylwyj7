@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApiService } from '../shared/api.service';
 import { CostOfFundsRequest } from '../costoffunds-request-model';
 import {LoanOfficer} from '../loanofficer-model';
-import * as dbOfficers from '../../assets/Officers.json';
+import  * as dbOfficers from '../../assets/Officers.json';
 
 
 @Component({
