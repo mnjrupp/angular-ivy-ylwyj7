@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApiService } from '../shared/api.service';
 import { CostOfFundsRequest } from '../costoffunds-request-model';
+import {LoanOfficer} from '../loanofficer-model';
+import * as dbOfficers from '../../assets/Officers.json';
 
 
 @Component({
@@ -10,7 +12,7 @@ import { CostOfFundsRequest } from '../costoffunds-request-model';
   styleUrls: ['./loanofficer.component.css']
 })
 export class LoanOfficerComponent implements OnInit {
-
+  officers:LoanOfficer[] = dbOfficers;
   formValue : FormGroup;
   costoffundsreqObj: CostOfFundsRequest;
 
