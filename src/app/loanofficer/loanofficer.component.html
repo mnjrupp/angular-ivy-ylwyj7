@@ -59,10 +59,10 @@
         </div>
         <div class="col p-1">
           <div class="mb-1">
-            <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="loanOfficer" id="loanOfficer">
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="loanOfficer" id="loanOfficer" *ngFor="let officer of officers">
               <option selected></option>
-              <option selected>Aaron Nors</option>
-              <option selected>Adam Ledlow</option>
+              <option value="{{officer.name}}">{{officer.name}}</option>
+             <!---- <option selected>Adam Ledlow</option>
               <option selected>Andrew Polk</option>
               <option selected>Barbara Golden</option>
               <option selected>Bradley Horry</option>
@@ -89,7 +89,7 @@
               <option selected>Thomas Keith</option>
               <option selected>Todd Reed</option>
               <option selected>Tyler Rosser</option>
-              <option selected>Walker Dailey</option>
+              <option selected>Walker Dailey</option>-->
             </select>
           </div>
           <div class="mb-1">
