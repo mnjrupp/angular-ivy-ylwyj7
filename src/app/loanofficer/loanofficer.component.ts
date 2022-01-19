@@ -12,7 +12,7 @@ import  * as dbOfficers from '../../assets/Officers.json';
   styleUrls: ['./loanofficer.component.css']
 })
 export class LoanOfficerComponent implements OnInit {
-  officers:LoanOfficer[] = dbOfficers;
+  //officers:LoanOfficer[] = dbOfficers;
   formValue : FormGroup;
   costoffundsreqObj: CostOfFundsRequest;
 
