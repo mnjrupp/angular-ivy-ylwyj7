@@ -59,37 +59,9 @@
         </div>
         <div class="col p-1">
           <div class="mb-1">
-            <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="loanOfficer" id="loanOfficer" *ngFor="let officer of officers">
-            <option selected></option>
-              <option value="{{officer.name}}">{{officer.name}}</option>
-             <!---- <option selected>Adam Ledlow</option>
-              <option selected>Andrew Polk</option>
-              <option selected>Barbara Golden</option>
-              <option selected>Bradley Horry</option>
-              <option selected>Craig Cheyne</option>
-              <option selected>Craig Hartman</option>
-              <option selected>Gerrett Edwards</option>
-              <option selected>Gerrit Schouten</option>
-              <option selected>Hannah Gaddy</option>
-              <option selected>James Fuchs</option>
-              <option selected>Jason Jones</option>
-              <option selected>Jennifer White</option>
-              <option selected>Justin Kelly</option>
-              <option selected>Justin Wiethorn</option>
-              <option selected>Kregg Slakey</option>
-              <option selected>Kyle Felan</option>
-              <option selected>Lindsey Ellsworth</option>
-              <option selected>Macy Blanckenship</option>
-              <option selected>Matt Lynch</option>
-              <option selected>Nathan Winstead</option>
-              <option selected>Patrick Hejl</option>
-              <option selected>Randy Meinke</option>
-              <option selected>Robert Humphreys</option>
-              <option selected>Thomas Bugner</option>
-              <option selected>Thomas Keith</option>
-              <option selected>Todd Reed</option>
-              <option selected>Tyler Rosser</option>
-              <option selected>Walker Dailey</option>-->
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="loanOfficer" id="loanOfficer">
+            <option [ngValue]="null" disabled>Select Loan Officer</option>
+              <option  *ngFor="let officer of officers" [ngValue]="officer.name">{{officer.name}}</option>
             </select>
           </div>
           <div class="mb-1">

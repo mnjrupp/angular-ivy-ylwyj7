@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApiService } from '../shared/api.service';
 import { CostOfFundsRequest } from '../costoffunds-request-model';
 import {LoanOfficer} from '../loanofficer-model';
-import  * as dbOfficers from '../../assets/Officers.json';
+import  dbOfficers from '../../assets/Officers.json';
 
 
 @Component({
@@ -12,11 +12,13 @@ import  * as dbOfficers from '../../assets/Officers.json';
   styleUrls: ['./loanofficer.component.css']
 })
 export class LoanOfficerComponent implements OnInit {
-  officers:LoanOfficer[] = dbOfficers;
+  officers:any;
   formValue : FormGroup;
   costoffundsreqObj: CostOfFundsRequest;
 
-  constructor(private formbuilder:FormBuilder) { }
+  constructor(private formbuilder:FormBuilder) { 
+    this.officers = dbOfficers;
+  }
 
   getCOF() {
     // TODO: implemet the CostOfFunds from FCBT
