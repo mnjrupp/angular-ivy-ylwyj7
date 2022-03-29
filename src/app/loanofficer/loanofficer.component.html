@@ -59,7 +59,7 @@
         </div>
         <div class="col p-1">
           <div class="mb-1">
-            <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="loanOfficer" id="loanOfficer" (change)="updateOfficerData($event.target.value)">
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="loanOfficer" id="loanOfficer" (change)="updateOfficerData($event.target)">
             <option [ngValue]="null" disabled>Select Loan Officer</option>
               <option  *ngFor="let officer of officers" [ngValue]="officer.name">{{officer.name}}</option>
             </select>

@@ -86,5 +86,17 @@ export class LoanOfficerComponent implements OnInit {
     })
 
   }
+  updateOfficerData(event){
+    //console.log(event.value);
+    var branch = this.officers.filter(function(officer){
+     // console.log(officer);
+      return officer.name===event.value
+    }).map(function(officer){
+      console.log(officer);
+        return officer.location;
+      })
+      console.log(branch);
+    }
+   
 
-}
+  }
