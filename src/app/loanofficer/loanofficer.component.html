@@ -127,7 +127,7 @@
             </select>
           </div>
           <div class="mb-1">
-            <input type="text" class="form-control form-control-sm" formControlName="loanAmnt" id="loanAmnt" placeholder="$0">
+            <input type="text" class="form-control form-control-sm" formControlName="loanAmnt" id="loanAmnt" (change)="formatCurrency_LoanAmnt($event)">
           </div>
           <div class="mb-1">
             <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="paymentfreq" id="paymentfreq">
@@ -172,7 +172,7 @@
           </div>
           <div class="mb-1" style="height:30px"></div>
           <div class="mb-1">
-            <input type="text" class="form-control form-control-sm" formControlName="feeAmnt" id="feeAmnt" placeholder="$0">
+            <input type="text" class="form-control form-control-sm" formControlName="feeAmnt" id="feeAmnt" (change)="formatCurrency_FeeAmnt($event)">
           </div>
           <div class="mb-1" style="height:30px"></div>
           <div class="mb-1">

@@ -60,19 +60,19 @@ export class LoanOfficerComponent implements OnInit {
       loanProd1: 20,
       TransferOption1: 'Open Prepayment',
       IntRate1: 0.0256,
-      PayAmnt1: 1000,
+      PayAmnt1: this.formatCurrency(1000),
       AmorType2:'P&I',
       AmorTerm2: 20,
       loanProd2: 20,
       TransferOption2: 'Open Prepayment',
       IntRate2: 0.0256,
-      PayAmnt2: 1000,
+      PayAmnt2: this.formatCurrency(1000),
       AmorType3: 'P+I',
       AmorTerm3: 20,
       loanProd3: 20,
       TransferOption3: 'Open Prepayment',
       IntRate3: 0.0256,
-      PayAmnt3: 863.74,
+      PayAmnt3: this.formatCurrency(863.74),
       RecomRate1: 0.0464,
       RecomSpread1: 0.0265,
       Variance1: 0,
@@ -97,6 +97,20 @@ export class LoanOfficerComponent implements OnInit {
       this.formValue.patchValue({branchOffice:foundOfficer[0].location,
         branchaddress:foundOfficer[0].Address});
     }
-   
-
+    formatCurrency_LoanAmnt(event)
+    {
+      var uy = new Intl.NumberFormat('en-US',{style: 'currency', currency:'USD'}).format(event.target.value);
+      this.formValue.patchValue({loanAmnt:uy});
+     
+    }
+    formatCurrency_FeeAmnt(event)
+    {
+      var uy = new Intl.NumberFormat('en-US',{style: 'currency', currency:'USD'}).format(event.target.value);
+      this.formValue.patchValue({feeAmnt:uy});
+     
+    }
+    formatCurrency(value){
+      var uy = new Intl.NumberFormat('en-US',{style: 'currency', currency:'USD'}).format(value);
+      return uy;
+    }
   }
