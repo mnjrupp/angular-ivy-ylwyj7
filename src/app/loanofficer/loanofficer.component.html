@@ -59,34 +59,16 @@
         </div>
         <div class="col p-1">
           <div class="mb-1">
-            <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="loanOfficer" id="loanOfficer" (change)="updateOfficerData($event.target)">
-            <option [ngValue]="null" disabled>Select Loan Officer</option>
-              <option  *ngFor="let officer of officers" [ngValue]="officer.name">{{officer.name}}</option>
-            </select>
+          <select class="form-select form-select-sm" aria-label=".form-select-sm" formControlName="loanOfficer" id="loanOfficer" #t (change)="updateOfficerData(t.value)">
+          <option [ngValue]="null" disabled>Select Loan Officer</option>
+            <option  *ngFor="let officer of officers" [value]="officer.name">{{officer.name}}</option>
+          </select>
           </div>
           <div class="mb-1">
-            <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="branchOffice" id="branchOffice">
-              <option selected></option>
-              <option>Abilene</option>
-              <option>AgriBusiness</option>
-              <option>Cleburne</option>
-              <option>Corsicana</option>
-              <option>Denton</option>
-              <option>Fort Worth</option>
-              <option>Georgetown</option>
-              <option>Hillsboro</option>
-              <option>Lampasas</option>
-              <option>New Boston</option>
-              <option>Paris</option>
-              <option>Sherman</option>
-              <option>Stephenville</option>
-              <option>Sweetwater</option>
-              <option>Waco</option>
-              <option>Weatherford</option>
-            </select>
+          <input type="text" class="form-control form-control-sm" formControlName="branchOffice" id="branchOffice" value="{{officers.location}}">
           </div>
           <div class="mb-1">
-            <textarea class="form-control form-control-sm" formControlName="branchaddress" id="branchaddress" rows="1"></textarea>
+          <textarea class="form-control form-control-sm" formControlName="branchaddress" id="branchaddress" rows="1" value="{{officers.Address}}"></textarea>
           </div>
           <div>
             <input type="text" class="form-control form-control-sm" formControlName="calcDate" id="calcDate" placeholder="">
