@@ -12,12 +12,14 @@ import  dbOfficers from '../../assets/Officers.json';
   styleUrls: ['./loanofficer.component.css']
 })
 export class LoanOfficerComponent implements OnInit {
+  LoanMoney;
   officers:any;
   formValue : FormGroup;
   costoffundsreqObj: CostOfFundsRequest;
 
   constructor(private formbuilder:FormBuilder) { 
     this.officers = dbOfficers;
+
   }
 
   getCOF() {
@@ -25,6 +27,7 @@ export class LoanOfficerComponent implements OnInit {
     console.log(this.formValue.value);
   }
   ngOnInit() {
+   this.LoanMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(150000);
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -44,7 +47,7 @@ export class LoanOfficerComponent implements OnInit {
       fsaguarantee: '1',
       loantype: '2',
       lienpos: '1',
-      loanAmnt: 145000,
+      loanAmnt: this.LoanMoney,
       paymentfreq: 12,
       pd: '4',
       ballonyrs: '1',
