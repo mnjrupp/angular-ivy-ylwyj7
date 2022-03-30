@@ -409,7 +409,7 @@
             <input class="form-control" style="background-color: #fd7e14" type="text" value="" aria-label="readonly input example" formControlName="RecomSpread1" id="RecomSpread1" readonly>
           </div>
           <div class="mb-1">
-            <input class="form-control bg-white" type="text" value="" aria-label="readonly input example" formControlName="Variance1" id="Variance1">
+            <input class="form-control bg-white" type="text" value="" aria-label="readonly input example" formControlName="Variance1" id="Variance1" (change)="formatPercent_var1($event)">
           </div>
           <div class="mb-1">
             <input class="form-control" style="background-color:#9bc48a" type="text" value="" aria-label="readonly input example" formControlName="finalSpread1" id="finalSpread1" readonly>

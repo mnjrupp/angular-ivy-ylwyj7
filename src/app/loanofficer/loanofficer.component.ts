@@ -59,32 +59,32 @@ export class LoanOfficerComponent implements OnInit {
       AmorTerm1: 20,
       loanProd1: 20,
       TransferOption1: 'Open Prepayment',
-      IntRate1: 0.0256,
+      IntRate1: this.formatPercent(0.0256),
       PayAmnt1: this.formatCurrency(1000),
       AmorType2:'P&I',
       AmorTerm2: 20,
       loanProd2: 20,
       TransferOption2: 'Open Prepayment',
-      IntRate2: 0.0256,
+      IntRate2: this.formatPercent(0.0256),
       PayAmnt2: this.formatCurrency(1000),
       AmorType3: 'P+I',
       AmorTerm3: 20,
       loanProd3: 20,
       TransferOption3: 'Open Prepayment',
-      IntRate3: 0.0256,
+      IntRate3: this.formatPercent(0.0256),
       PayAmnt3: this.formatCurrency(863.74),
-      RecomRate1: 0.0464,
-      RecomSpread1: 0.0265,
+      RecomRate1: this.formatPercent(0.0464),
+      RecomSpread1: this.formatPercent(0.0265),
       Variance1: 0,
-      finalSpread1: 0.0265,
-      RecomRate2: 0.0464,
-      RecomSpread2: 0.0265,
+      finalSpread1: this.formatPercent(0.0265),
+      RecomRate2: this.formatPercent(0.0464),
+      RecomSpread2: this.formatPercent(0.0265),
       Variance2: 0,
-      finalSpread2: 0.0265,
-      RecomRate3: 0.0464,
-      RecomSpread3: 0.0265,
+      finalSpread2: this.formatPercent(0.0265),
+      RecomRate3: this.formatPercent(0.0464),
+      RecomSpread3: this.formatPercent(0.0265),
       Variance3: 0,
-      finalSpread3: 0.0265,
+      finalSpread3: this.formatPercent(0.0265),
 
     })
 
@@ -112,5 +112,13 @@ export class LoanOfficerComponent implements OnInit {
     formatCurrency(value){
       var uy = new Intl.NumberFormat('en-US',{style: 'currency', currency:'USD'}).format(value);
       return uy;
+    }
+
+    formatPercent(value){
+      var uy = new Intl.NumberFormat('en-US',{style: 'percent', maximumFractionDigits: 2}).format(value);
+      return uy;
+    }
+    formatPercent_var1(event){
+      this.formValue.patchValue({Variance1:this.formatPercent(event.target.value)});
     }
   }
