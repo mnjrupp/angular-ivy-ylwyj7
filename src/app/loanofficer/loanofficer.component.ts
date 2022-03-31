@@ -128,19 +128,19 @@ export class LoanOfficerComponent implements OnInit {
       AmorType1: 'P&I',
       AmorTerm1: 20,
       loanProd1: 20,
-      TransferOption1: 'Open Prepayment',
+      TransferOption1: 'OPO',
       IntRate1: this.formatPercent(0.0256),
       PayAmnt1: this.formatCurrency(1000),
       AmorType2:'P&I',
       AmorTerm2: 20,
       loanProd2: 20,
-      TransferOption2: 'Open Prepayment',
+      TransferOption2: 'OPO',
       IntRate2: this.formatPercent(0.0256),
       PayAmnt2: this.formatCurrency(1000),
       AmorType3: 'P+I',
       AmorTerm3: 20,
       loanProd3: 20,
-      TransferOption3: 'Open Prepayment',
+      TransferOption3: 'OPO',
       IntRate3: this.formatPercent(0.0256),
       PayAmnt3: this.formatCurrency(863.74),
       RecomRate1: this.formatPercent(0.0464),
@@ -160,17 +160,48 @@ export class LoanOfficerComponent implements OnInit {
 
   }
   buildCOF(value:PricingModel){
-    //this.costoffundsreqObj.AmortizationTermMonths=value.AmorTerm1
+    this.costoffundsreqObj[0].amortizationTermMonths=value.AmorTerm1
     this.costoffundsreqObj[0].amortizationType=value.AmorType1
     this.costoffundsreqObj[0].amortizationTypeId=0
     this.costoffundsreqObj[0].correlationId=''
     this.costoffundsreqObj[0].interestOnlyPayments=0
-    this.costoffundsreqObj[0].loanAmount=this.unformatNumber(value.loanAmnt)
+    this.costoffundsreqObj[0].loanAmount=+this.unformatNumber(value.loanAmnt)
     this.costoffundsreqObj[0].loanNumber=''
     this.costoffundsreqObj[0].loanTermMonths=+value.loanProd1
     this.costoffundsreqObj[0].lockCategory='30DL'
     this.costoffundsreqObj[0].lockCategoryId=0
     this.costoffundsreqObj[0].optionCategory=value.TransferOption1
+    this.costoffundsreqObj[0].optionCategoryId=0
+    this.costoffundsreqObj[0].paymentsPerYear=value.paymentfreq
+    this.costoffundsreqObj[0].rateProduct='Fixed'
+    this.costoffundsreqObj[1].amortizationTermMonths=value.AmorTerm2
+    this.costoffundsreqObj[1].amortizationType=value.AmorType2
+    this.costoffundsreqObj[1].amortizationTypeId=0
+    this.costoffundsreqObj[1].correlationId=''
+    this.costoffundsreqObj[1].interestOnlyPayments=0
+    this.costoffundsreqObj[1].loanAmount=+this.unformatNumber(value.loanAmnt)
+    this.costoffundsreqObj[1].loanNumber=''
+    this.costoffundsreqObj[1].loanTermMonths=+value.loanProd2
+    this.costoffundsreqObj[1].lockCategory='30DL'
+    this.costoffundsreqObj[1].lockCategoryId=0
+    this.costoffundsreqObj[1].optionCategory=value.TransferOption2
+    this.costoffundsreqObj[1].optionCategoryId=0
+    this.costoffundsreqObj[1].paymentsPerYear=value.paymentfreq
+    this.costoffundsreqObj[1].rateProduct='Fixed'
+    this.costoffundsreqObj[2].amortizationTermMonths=value.AmorTerm3
+    this.costoffundsreqObj[2].amortizationType=value.AmorType3
+    this.costoffundsreqObj[2].amortizationTypeId=0
+    this.costoffundsreqObj[2].correlationId=''
+    this.costoffundsreqObj[2].interestOnlyPayments=0
+    this.costoffundsreqObj[2].loanAmount=+this.unformatNumber(value.loanAmnt)
+    this.costoffundsreqObj[2].loanNumber=''
+    this.costoffundsreqObj[2].loanTermMonths=+value.loanProd3
+    this.costoffundsreqObj[2].lockCategory='30DL'
+    this.costoffundsreqObj[2].lockCategoryId=0
+    this.costoffundsreqObj[2].optionCategory=value.TransferOption3
+    this.costoffundsreqObj[2].optionCategoryId=0
+    this.costoffundsreqObj[2].paymentsPerYear=value.paymentfreq
+    this.costoffundsreqObj[2].rateProduct='Fixed'
    return this.costoffundsreqObj;
 
   }
