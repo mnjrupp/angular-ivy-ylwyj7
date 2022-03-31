@@ -1,18 +1,18 @@
 export interface CostOfFundsRequest {
-  CorrelationId: string;
-  LoanNumber: string;
-  LoanAmount: number;
-  AmortizationType: string;
-  AmortizationTypeId: number;
-  AmortizationTermMonths: number;
-  LoanTermMonths: number;
-  PaymentsPerYear: number;
-  InterestOnlyPayments: number;
-  RateProduct: string;
-  OptionCategory: string;
-  OptionCategoryId: number;
-  LockCategory: string;
-  LockCategoryId: number;
+  correlationId: string;
+  loanNumber: string;
+  loanAmount: number;
+  amortizationType: string;
+  amortizationTypeId: number;
+  amortizationTermMonths: number;
+  loanTermMonths: number;
+  paymentsPerYear: number;
+  interestOnlyPayments: number;
+  rateProduct: string;
+  optionCategory: string;
+  optionCategoryId: number;
+  lockCategory: string;
+  lockCategoryId: number;
   RoundingRule: Roundingrule;
 }
 export interface Roundingrule {

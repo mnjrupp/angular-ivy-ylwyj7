@@ -16,18 +16,84 @@ export class LoanOfficerComponent implements OnInit {
   LoanMoney;
   officers:any;
   formValue : FormGroup;
-  costoffundsreqObj: CostOfFundsRequest;
+  costoffundsreqObj: CostOfFundsRequest[];
 
   constructor(private formbuilder:FormBuilder) { 
     this.officers = dbOfficers;
+    this.costoffundsreqObj =[{
+      correlationId:'' ,
+      loanNumber: "",
+      loanAmount: 145000,
+      amortizationType: "P+I",
+      amortizationTypeId: 0,
+      amortizationTermMonths: 28,
+      loanTermMonths: 28,
+      paymentsPerYear: 12,
+      interestOnlyPayments: 0,
+      rateProduct: "Fixed",
+      optionCategory: "FYM",
+      optionCategoryId: 0,
+      lockCategory: "30DL",
+      lockCategoryId: 0,
+      RoundingRule: {
+        Type: "Actual",
+        Precision: 0,
+        BasisPoint: 0
+      }
+    },
+    {
+      correlationId:'' ,
+      loanNumber: "",
+      loanAmount: 145000,
+      amortizationType: "P+I",
+      amortizationTypeId: 0,
+      amortizationTermMonths: 28,
+      loanTermMonths: 28,
+      paymentsPerYear: 12,
+      interestOnlyPayments: 0,
+      rateProduct: "Fixed",
+      optionCategory: "FYM",
+      optionCategoryId: 0,
+      lockCategory: "30DL",
+      lockCategoryId: 0,
+      RoundingRule: {
+        Type: "Actual",
+        Precision: 0,
+        BasisPoint: 0
+      }
+    },
+    {
+      correlationId:'' ,
+      loanNumber: "",
+      loanAmount: 145000,
+      amortizationType: "P+I",
+      amortizationTypeId: 0,
+      amortizationTermMonths: 28,
+      loanTermMonths: 28,
+      paymentsPerYear: 12,
+      interestOnlyPayments: 0,
+      rateProduct: "Fixed",
+      optionCategory: "FYM",
+      optionCategoryId: 0,
+      lockCategory: "30DL",
+      lockCategoryId: 0,
+      RoundingRule: {
+        Type: "Actual",
+        Precision: 0,
+        BasisPoint: 0
+      }
+    }]
 
   }
 
   getCOF() {
     // TODO: implemet the CostOfFunds from FCBT
-    var copyformValue:string;
+    var copyformValue:PricingModel;
     copyformValue =this.formValue.value;
-    console.log(JSON.stringify(copyformValue));
+    console.log(copyformValue);
+    console.log(this.unformatNumber(copyformValue.IntRate1));
+    //console.log(this.costoffundsreqObj[2].amortizationTermMonths);
+    
   }
   ngOnInit() {
    this.LoanMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(150000);
@@ -92,6 +158,18 @@ export class LoanOfficerComponent implements OnInit {
     })
 
   }
+  buildCOF(value:PricingModel){
+    //this.costoffundsreqObj.AmortizationTermMonths=value.AmorTerm1
+    this.costoffundsreqObj[0].amortizationType=value.AmorType1
+    this.costoffundsreqObj[0].amortizationTypeId=0
+    this.costoffundsreqObj[0].correlationId=''
+    this.costoffundsreqObj[0].interestOnlyPayments=0
+    this.costoffundsreqObj[0].loanAmount===value.loanAmnt
+    this.costoffundsreqObj[0].loanNumber=''
+    this.costoffundsreqObj[0].loanTermMonths===value.loanProd1
+   return this.costoffundsreqObj;
+
+  }
   updateOfficerData(value){
     //console.log(event.value);
     var foundOfficer:LoanOfficer = this.officers.filter(x=> x.name===value);
@@ -125,6 +203,7 @@ export class LoanOfficerComponent implements OnInit {
       this.formValue.patchValue({Variance1:this.formatPercent(event.target.value)});
     }
     unformatNumber(value){
-      return Number(value.replace(/[^0-9]g/, ''));
+      //console.log(value.replace(/\$|,/g, ''));
+      return value.replace(/\$|,|\%/g, '');
     }
   }
