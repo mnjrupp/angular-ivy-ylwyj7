@@ -227,6 +227,7 @@ export class LoanOfficerComponent implements OnInit {
       (error)=>{
           console.log('error returned =>',error);
           console.log('passing dummy data =>',JSON.stringify(this.costoffundsresObj));
+          this.buildPricingModel(this.costoffundsresObj);
       }
     )
   }
@@ -344,7 +345,9 @@ export class LoanOfficerComponent implements OnInit {
   }
 
   buildPricingModel(value:CostOfFundsResponse[]){
-    this.formValue.patchValue({
+    this.formValue.patchValue({COF1:value[0].Data[0].Spread,
+      COF2:value[0].Data[1].Spread,
+      COF3:value[0].Data[2].Spread,
 
     });
   }
