@@ -4,6 +4,7 @@ import { ApiService } from '../shared/api.service';
 import { CostOfFundsRequest } from '../costoffunds-request-model';
 import {LoanOfficer} from '../loanofficer-model';
 import  dbOfficers from '../../assets/Officers.json';
+import {PricingModel} from '../pricing-model';
 
 
 @Component({

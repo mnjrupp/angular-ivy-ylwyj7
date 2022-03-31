@@ -1,4 +1,4 @@
-export interface pricing{
+export interface PricingModel{
   applicationName:string;
   phoneNumber: string;
   address: string;
