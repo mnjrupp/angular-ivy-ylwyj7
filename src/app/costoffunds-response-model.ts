@@ -40,15 +40,15 @@ export interface Datum {
   WholesaleRate: number;
   RateCode: string;
   RateSetId: number;
-  RateSourceDate: Date;
+  RateSourceDate: string;
   RateSourceDateDisplay: string;
-  MonthlyRateSourceDate: Date;
+  MonthlyRateSourceDate: string;
   MonthlyRateSourceDateDisplay: string;
-  RateValidThroughDate: Date;
+  RateValidThroughDate: string;
   RateValidThroughDateDisplay: string;
   WeightedAverageLife: number;
   LFF: number;
-  LockExpirationDate: Date;
+  LockExpirationDate:string;
   LockExpirationDateDisplay: string;
   RateLockQuoteId: number;
   RateLockQuote: Ratelockquote;
@@ -70,7 +70,7 @@ export interface Ratelockquote {
   RateProductId: number;
   RateProductName: string;
   RateSetId: number;
-  QuoteExpirationDate: Date;
+  QuoteExpirationDate: string;
   QuoteExpirationDateDisplay: string;
   OptionTypeId: number;
   OptionTypeCode: string;
