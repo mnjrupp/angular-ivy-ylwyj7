@@ -340,7 +340,9 @@ export class LoanOfficerComponent implements OnInit {
   }
 
   buildPricingModel(value:CostOfFundsResponse[]){
-    
+    this.formValue.patchValue({
+      
+    });
   }
   updateOfficerData(value){
     //console.log(event.value);
