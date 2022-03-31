@@ -19,7 +19,7 @@ export class LoanOfficerComponent implements OnInit {
   officers:any;
   formValue : FormGroup;
   costoffundsreqObj: CostOfFundsRequest[];
-  costoffundsresObj:CostOfFundsResponse;
+  costoffundsresObj:CostOfFundsResponse[];
 
   constructor(private formbuilder:FormBuilder,private apiservice:ApiService) { 
     this.officers = dbOfficers;
@@ -86,7 +86,7 @@ export class LoanOfficerComponent implements OnInit {
         BasisPoint: 0
       }
     }]
-    this.costoffundsresObj = {
+    this.costoffundsresObj = [{
       "Success": true,
       "Data": [
         {
@@ -208,7 +208,7 @@ export class LoanOfficerComponent implements OnInit {
         }
       ],
       "Error": null
-    }
+    }]
 
   }
 
@@ -337,6 +337,10 @@ export class LoanOfficerComponent implements OnInit {
     this.costoffundsreqObj[2].rateProduct='Fixed'
    return this.costoffundsreqObj;
 
+  }
+
+  buildPricingModel(value:CostOfFundsResponse[]){
+    
   }
   updateOfficerData(value){
     //console.log(event.value);

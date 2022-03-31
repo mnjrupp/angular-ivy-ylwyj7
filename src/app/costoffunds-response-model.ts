@@ -34,6 +34,7 @@ export interface Datum {
   LockCategory: string;
   LockCategoryId: number;
   CurrentIndex: number;
+  SpreadIndex:number;
   MonthlyIndex: number;
   Index: number;
   Spread: number;
@@ -52,7 +53,7 @@ export interface Datum {
   LockExpirationDateDisplay: string;
   RateLockQuoteId: number;
   RateLockQuote: Ratelockquote;
-  TimeStamp: Date;
+  TimeStamp: string;
 }
 export interface Ratelockquote {
   RateLockQuoteId: number;
