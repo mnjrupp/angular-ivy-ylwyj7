@@ -289,6 +289,9 @@ export class LoanOfficerComponent implements OnInit {
       RecomSpread3: this.formatPercent(0.0265),
       Variance3: 0,
       finalSpread3: this.formatPercent(0.0265),
+      COF1:'NA',
+      COF2:'NA',
+      COF3:'NA'
 
     })
 
