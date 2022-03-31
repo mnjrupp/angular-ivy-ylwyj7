@@ -13,6 +13,7 @@ export class ApiService {
 
   /*This is the FCBTCostOfFunds API */
   postCostofFunds(data: CostOfFundsRequest[]): Observable<any> {
+    console.log('postCostofFunds ',data);
     return this.http.post("http://lstsqldev01.nterprise.net:8082/api/FCBTCostOfFunds", data)
      /* .pipe(map((res: any) => {
         return res;

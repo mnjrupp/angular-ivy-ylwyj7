@@ -94,7 +94,11 @@ export class LoanOfficerComponent implements OnInit {
     console.log(this.unformatNumber(copyformValue.IntRate1));
     //console.log(this.costoffundsreqObj[2].amortizationTermMonths);
     console.log(this.buildCOF(copyformValue))
-    console.log(this.apiservice.postCostofFunds(this.buildCOF(copyformValue)))
+    this.apiservice.postCostofFunds(this.buildCOF(copyformValue)).subscribe(
+      data=>{
+        console.log(data)
+      }
+    )
   }
   ngOnInit() {
    this.LoanMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(150000);
