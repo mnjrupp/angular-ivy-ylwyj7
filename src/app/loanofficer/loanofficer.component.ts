@@ -95,8 +95,11 @@ export class LoanOfficerComponent implements OnInit {
     //console.log(this.costoffundsreqObj[2].amortizationTermMonths);
     console.log(this.buildCOF(copyformValue))
     this.apiservice.postCostofFunds(this.buildCOF(copyformValue)).subscribe(
-      data=>{
-        console.log(data)
+      (data)=>{
+        console.log('data returned ',data)
+      },
+      (error)=>{
+          console.log('error returned =>',error);
       }
     )
   }
