@@ -24,7 +24,9 @@ export class LoanOfficerComponent implements OnInit {
 
   getCOF() {
     // TODO: implemet the CostOfFunds from FCBT
-    console.log(this.formValue.value);
+    var copyformValue:string;
+    copyformValue =this.formValue.value;
+    console.log(JSON.stringify(copyformValue));
   }
   ngOnInit() {
    this.LoanMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(150000);
@@ -120,5 +122,8 @@ export class LoanOfficerComponent implements OnInit {
     }
     formatPercent_var1(event){
       this.formValue.patchValue({Variance1:this.formatPercent(event.target.value)});
+    }
+    unformatNumber(value){
+      return Number(value.replace(/[^0-9]g/, ''));
     }
   }
