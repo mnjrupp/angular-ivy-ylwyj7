@@ -93,6 +93,7 @@ export class LoanOfficerComponent implements OnInit {
     console.log(copyformValue);
     console.log(this.unformatNumber(copyformValue.IntRate1));
     //console.log(this.costoffundsreqObj[2].amortizationTermMonths);
+    console.log(this.buildCOF(copyformValue))
     
   }
   ngOnInit() {
@@ -164,9 +165,12 @@ export class LoanOfficerComponent implements OnInit {
     this.costoffundsreqObj[0].amortizationTypeId=0
     this.costoffundsreqObj[0].correlationId=''
     this.costoffundsreqObj[0].interestOnlyPayments=0
-    this.costoffundsreqObj[0].loanAmount===value.loanAmnt
+    this.costoffundsreqObj[0].loanAmount=this.unformatNumber(value.loanAmnt)
     this.costoffundsreqObj[0].loanNumber=''
-    this.costoffundsreqObj[0].loanTermMonths===value.loanProd1
+    this.costoffundsreqObj[0].loanTermMonths=+value.loanProd1
+    this.costoffundsreqObj[0].lockCategory='30DL'
+    this.costoffundsreqObj[0].lockCategoryId=0
+    this.costoffundsreqObj[0].optionCategory=value.TransferOption1
    return this.costoffundsreqObj;
 
   }
