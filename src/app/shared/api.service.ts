@@ -11,7 +11,7 @@ export class ApiService {
 
   /*This is the FCBTCostOfFunds API */
   postCostofFunds(data: any) {
-    return this.http.post<any>("http://localhost:4200/post", data)
+    return this.http.post<any>("http://lstsqldev01.nterprise.net:8082/api/FCBTCostOfFunds", data)
       .pipe(map((res: any) => {
         return res;
       }))
