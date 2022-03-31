@@ -18,7 +18,7 @@ export class LoanOfficerComponent implements OnInit {
   formValue : FormGroup;
   costoffundsreqObj: CostOfFundsRequest[];
 
-  constructor(private formbuilder:FormBuilder) { 
+  constructor(private formbuilder:FormBuilder,private apiservice:ApiService) { 
     this.officers = dbOfficers;
     this.costoffundsreqObj =[{
       correlationId:'' ,
@@ -94,7 +94,7 @@ export class LoanOfficerComponent implements OnInit {
     console.log(this.unformatNumber(copyformValue.IntRate1));
     //console.log(this.costoffundsreqObj[2].amortizationTermMonths);
     console.log(this.buildCOF(copyformValue))
-    
+    console.log(this.apiservice.postCostofFunds(this.buildCOF(copyformValue)))
   }
   ngOnInit() {
    this.LoanMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(150000);

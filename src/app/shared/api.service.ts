@@ -12,7 +12,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   /*This is the FCBTCostOfFunds API */
-  postCostofFunds(data: CostOfFundsRequest): Observable<any> {
+  postCostofFunds(data: CostOfFundsRequest[]): Observable<any> {
     return this.http.post("http://lstsqldev01.nterprise.net:8082/api/FCBTCostOfFunds", data)
      /* .pipe(map((res: any) => {
         return res;
