@@ -25,13 +25,19 @@
           [routerLinkActive]="['link-active']"
           [routerLinkActiveOptions]="{ exact: true }"
         >
-          <a class="nav-link text-dark" [routerLink]="['/loanofficer']">Loan Officer</a>
+          <a class="nav-link text-dark border" [routerLink]="['/loanofficer']">Loan Officer</a>
         </li>
         <li class="nav-item" [routerLinkActive]="['link-active']">
-          <a class="nav-link text-dark" [routerLink]="['/customer']"
+          <a class="nav-link text-dark border" [routerLink]="['/customer']"
             >Customer</a
           >
         </li>
+        <li class="nav-item" [routerLinkActive]="['link-active']">
+          <a class="nav-link text-dark border" [routerLink]="['/AmortSchedOne']">Amortization Schedule One</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['link-active']">
+        <a class="nav-link text-dark border" [routerLink]="['/AmortSchedTwo']">Amortization Schedule Two</a>
+      </li>
       </ul>
     </div>
   </div>
