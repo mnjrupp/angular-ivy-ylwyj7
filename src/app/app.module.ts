@@ -14,6 +14,7 @@ import { CustomerComponent } from './customer/customer.component';
 import {AmortSchedOneComponent} from './amort-sched-one/amort-sched-one.component';
 import {AmortSchedTwoComponent} from './amort-sched-two/amort-sched-two.component';
 import {AmortSchedThreeComponent} from './amort-sched-three/amort-sched-three.component';
+import {PaymentCompareComponent} from './charts/payment-compare/payment-compare.component';
 
 @NgModule({
   imports:      [ BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -28,7 +29,8 @@ import {AmortSchedThreeComponent} from './amort-sched-three/amort-sched-three.co
        {path: 'customer',component:CustomerComponent},
        {path:'AmortSchedOne',component:AmortSchedOneComponent},
        {path:'AmortSchedTwo',component:AmortSchedTwoComponent},
-       {path:'AmortSchedThree',component:AmortSchedThreeComponent}
+       {path:'AmortSchedThree',component:AmortSchedThreeComponent},
+       {path:'PaymentsCompare',component:PaymentCompareComponent}
      ]) ],
 
   declarations: [ 
