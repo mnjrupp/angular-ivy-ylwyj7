@@ -13,6 +13,7 @@ import { LoanOfficerComponent } from './loanofficer/loanofficer.component';
 import { CustomerComponent } from './customer/customer.component';
 import {AmortSchedOneComponent} from './amort-sched-one/amort-sched-one.component';
 import {AmortSchedTwoComponent} from './amort-sched-two/amort-sched-two.component';
+import {AmortSchedThreeComponent} from './amort-sched-three/amort-sched-three.component';
 
 @NgModule({
   imports:      [ BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -26,7 +27,8 @@ import {AmortSchedTwoComponent} from './amort-sched-two/amort-sched-two.componen
        { path: 'loanofficer', component: LoanOfficerComponent },
        {path: 'customer',component:CustomerComponent},
        {path:'AmortSchedOne',component:AmortSchedOneComponent},
-       {path:'AmortSchedTwo',component:AmortSchedTwoComponent}
+       {path:'AmortSchedTwo',component:AmortSchedTwoComponent},
+       {path:'AmortSchedThree',component:AmortSchedThreeComponent}
      ]) ],
 
   declarations: [ 
