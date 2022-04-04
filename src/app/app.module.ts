@@ -15,6 +15,8 @@ import {AmortSchedOneComponent} from './amort-sched-one/amort-sched-one.componen
 import {AmortSchedTwoComponent} from './amort-sched-two/amort-sched-two.component';
 import {AmortSchedThreeComponent} from './amort-sched-three/amort-sched-three.component';
 import {PaymentCompareComponent} from './charts/payment-compare/payment-compare.component';
+import {InterestCompareComponent} from './charts/interest-compare/interest-compare.component';
+import {RateCalculatorComponent } from './rate-calculator/rate-calculator.component';
 
 @NgModule({
   imports:      [ BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -30,7 +32,9 @@ import {PaymentCompareComponent} from './charts/payment-compare/payment-compare.
        {path:'AmortSchedOne',component:AmortSchedOneComponent},
        {path:'AmortSchedTwo',component:AmortSchedTwoComponent},
        {path:'AmortSchedThree',component:AmortSchedThreeComponent},
-       {path:'PaymentsCompare',component:PaymentCompareComponent}
+       {path:'PaymentsCompare',component:PaymentCompareComponent},
+       {path:'InterestCompare',component:InterestCompareComponent},
+       {path:'RateCalc',component:RateCalculatorComponent }
      ]) ],
 
   declarations: [ 

@@ -19,36 +19,36 @@
       class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
       [ngClass]="{ show: isExpanded }"
     >
-      <ul class="navbar-nav flex-grow">
+      <ul class="nav nav-pill flex-grow">
         <li
           class="nav-item"
           [routerLinkActive]="['link-active']"
           [routerLinkActiveOptions]="{ exact: true }"
         >
-          <a class="nav-link text-dark border" [routerLink]="['/loanofficer']">Loan Officer</a>
+          <a class="nav-link text-dark " [routerLink]="['/loanofficer']">Loan Officer</a>
         </li>
         <li class="nav-item" [routerLinkActive]="['link-active']">
-          <a class="nav-link text-dark border" [routerLink]="['/customer']"
+          <a class="nav-link text-dark" [routerLink]="['/customer']"
             >Customer</a
           >
         </li>
         <li class="nav-item" [routerLinkActive]="['link-active']">
-          <a class="nav-link text-dark border" [routerLink]="['/AmortSchedOne']">Amortization Schedule One</a>
+          <a class="nav-link text-dark " [routerLink]="['/AmortSchedOne']">Amortization Schedule One</a>
         </li>
         <li class="nav-item" [routerLinkActive]="['link-active']">
-        <a class="nav-link text-dark border" [routerLink]="['/AmortSchedTwo']">Amortization Schedule Two</a>
+        <a class="nav-link text-dark " [routerLink]="['/AmortSchedTwo']">Amortization Schedule Two</a>
         </li>
         <li class="nav-item" [routerLinkActive]="['link-active']">
-        <a class="nav-link text-dark border" [routerLink]="['/AmortSchedThree']">Amortization Schedule Three</a>
+        <a class="nav-link text-dark " [routerLink]="['/AmortSchedThree']">Amortization Schedule Three</a>
       </li>
       <li class="nav-item" [routerLinkActive]="['link-active']">
-      <a class="nav-link text-dark border" [routerLink]="['/InterestCompare']">Interest Compare Chart</a>
+      <a class="nav-link text-dark " [routerLink]="['/InterestCompare']">Interest Compare Chart</a>
     </li>
     <li class="nav-item" [routerLinkActive]="['link-active']">
-    <a class="nav-link text-dark border" [routerLink]="['/PaymentsCompare']">Payments Compare Chart</a>
+    <a class="nav-link text-dark " [routerLink]="['/PaymentsCompare']">Payments Compare Chart</a>
   </li>
   <li class="nav-item" [routerLinkActive]="['link-active']">
-  <a class="nav-link text-dark border" [routerLink]="['/RateCalc']">Rate Conversion Calc</a>
+  <a class="nav-link text-dark " [routerLink]="['/RateCalc']">Rate Conversion Calc</a>
 </li>
       </ul>
     </div>
