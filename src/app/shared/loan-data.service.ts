@@ -5,10 +5,10 @@ import {PricingModel} from '../pricing-model';
 @Injectable()
 export class LoanDataService {
   LoanMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(150000);
-     today = new Date();
-    dd = String(this.today.getDate()).padStart(2, '0');
-     mm = String(this.today.getMonth() + 1).padStart(2, '0'); //January is 0!
-     yyyy = this.today.getFullYear();
+  today = new Date();
+  dd = String(this.today.getDate()).padStart(2, '0');
+  mm = String(this.today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  yyyy = this.today.getFullYear();
 
     strtoday = this.mm + '/' + this.dd + '/' + this.yyyy;
   pricingmodel:PricingModel ={
