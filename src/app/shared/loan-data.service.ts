@@ -29,6 +29,7 @@ export class LoanDataService {
     ballonyrs: 1,
     locateral: 1,
     feeAmnt: 0,
+    stockAmnt:this.formatCurrency(0),
     lgd: 1,
     ballon: null,
     AmorType1: 'P&I',

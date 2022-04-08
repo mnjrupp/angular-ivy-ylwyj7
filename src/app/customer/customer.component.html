@@ -16,18 +16,13 @@
   </div>
   <div class="col">
   <div class="mb-1 p-1 border " style="height:35px">
-  <small class="text-muted">Joe Doe</small>
+  <small class="text-muted">{{pricing.applicationName}}</small>
 </div>
 <div class="mb-1 border" style="height:35px">
-  <small class="text-muted">{{this}}</small>
+  <small class="text-muted">{{pricing.phoneNumber}}</small>
 </div>
 <div class="mb-1 border" style="height:35px">
-  <textarea
-    class="form-control form-control-sm"
-    formControlName="address"
-    id="customeraddress"
-    rows="1"
-  ></textarea>
+<small class="text-muted">{{pricing.address}}</small>
 </div>
   </div>
 </div>
@@ -53,19 +48,19 @@
   </div>
   <div class="col">
     <div class="mb-1 p-1 border">
-      <small class="text-muted">stuff</small>
+      <small class="text-muted">{{pricing.loanOfficer}}&nbsp; </small>
     </div>
     <div class="mb-1 p-1 border">
-      <small class="text-muted">Object</small>
+      <small class="text-muted">{{pricing.phoneNumber}} &nbsp;</small>
     </div>
     <div class="mb-1 p-1 border">
-      <small class="text-muted">Object</small>
+      <small class="text-muted">{{pricing.branchOffice}} &nbsp;</small>
     </div>
     <div class="mb-1 p-1 border">
-      <small class="text-muted">Object</small>
+      <small class="text-muted">{{pricing.loanDate}} &nbsp;</small>
     </div>
     <div class="mb-1 p-1 border">
-      <small class="text-muted">Object</small>
+      <small class="text-muted">{{pricing.branchaddress}} &nbsp;</small>
     </div>
   </div>
 </div>
@@ -88,16 +83,16 @@
   </div>
   <div class="col">
     <div class="mb-1 p-1 border">
-      <small class="text-muted">stuff</small>
+      <small class="text-muted">{{pricing.loanAmnt}}</small>
     </div>
     <div class="mb-1 p-1 border">
-      <small class="text-muted">Object</small>
+      <small class="text-muted">{{pricing.feeAmnt}}</small>
     </div>
     <div class="mb-1 p-1 border">
-      <small class="text-muted">Object</small>
+      <small class="text-muted">{{pricing.stockAmnt}}</small>
     </div>
     <div class="mb-1 p-1 border">
-      <small class="text-muted">Object</small>
+      <small class="text-muted">{{pricing.paymentfreq}}</small>
     </div>
   </div>
 </div>
