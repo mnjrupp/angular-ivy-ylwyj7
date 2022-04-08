@@ -17,6 +17,7 @@ import {AmortSchedThreeComponent} from './amort-sched-three/amort-sched-three.co
 import {PaymentCompareComponent} from './charts/payment-compare/payment-compare.component';
 import {InterestCompareComponent} from './charts/interest-compare/interest-compare.component';
 import {RateCalculatorComponent } from './rate-calculator/rate-calculator.component';
+import {LoanDataService } from './shared/loan-data.service';
 
 @NgModule({
   imports:      [ BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -42,6 +43,7 @@ import {RateCalculatorComponent } from './rate-calculator/rate-calculator.compon
     NavMenuComponent,
     LoanOfficerComponent,
     CustomerComponent],
-  bootstrap:    [ AppComponent ]
+   providers:[LoanDataService ],
+  bootstrap:[ AppComponent ]
 })
 export class AppModule { }
