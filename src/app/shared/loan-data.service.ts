@@ -71,6 +71,10 @@ export class LoanDataService {
   constructor() {
   
    }
+
+   editModel(newModel){
+     this.cofRes.next(newModel);
+   }
    formatCurrency(value){
     var uy = new Intl.NumberFormat('en-US',{style: 'currency', currency:'USD'}).format(value);
     return uy;
