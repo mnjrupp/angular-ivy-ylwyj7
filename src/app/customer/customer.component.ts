@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {LoanDataService} from '../shared/loan-data.service';
+import {PricingModel} from '../pricing-model';
 
 @Component({
   selector: 'app-customer',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent implements OnInit {
-
-  constructor() { }
+  pricing:PricingModel;
+  constructor(private loanservice:LoanDataService) { }
 
   ngOnInit() {
+    this.loanservice.cast.subscribe(data=>this.pricing = data);
   }
 
 }

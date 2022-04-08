@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApiService } from '../shared/api.service';
+import {LoanDataService} from '../shared/loan-data.service';
 import { CostOfFundsRequest } from '../costoffunds-request-model';
 import {CostOfFundsResponse} from '../costoffunds-response-model';
 
@@ -20,8 +21,11 @@ export class LoanOfficerComponent implements OnInit {
   formValue : FormGroup;
   costoffundsreqObj: CostOfFundsRequest[];
   costoffundsresObj:CostOfFundsResponse[];
+  pricing:PricingModel;
 
-  constructor(private formbuilder:FormBuilder,private apiservice:ApiService) { 
+  constructor(private formbuilder:FormBuilder,
+    private apiservice:ApiService,
+    private loanservice:LoanDataService) { 
     this.officers = dbOfficers;
     this.costoffundsreqObj =[{
       correlationId:'' ,
@@ -232,6 +236,9 @@ export class LoanOfficerComponent implements OnInit {
     )
   }
   ngOnInit() {
+    // subscribe to Loan Data service
+    this.loanservice.cast.subscribe(data=>this.pricing = data);
+    // variables to hold default data
    this.LoanMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(150000);
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
@@ -241,58 +248,58 @@ export class LoanOfficerComponent implements OnInit {
     var strtoday = mm + '/' + dd + '/' + yyyy;
 
     this.formValue = this.formbuilder.group({
-      applicationName: '',
-      phoneNumber: '',
-      address: '',
-      loanDate:'',
-      loanOfficer: '',
-      branchOffice: '',
-      branchaddress: '',
-      calcDate:  strtoday,
-      fsaguarantee: '1',
-      loantype: '2',
-      lienpos: '1',
-      loanAmnt: this.LoanMoney,
-      paymentfreq: 12,
-      pd: '4',
-      ballonyrs: '1',
-      locateral: '1',
-      feeAmnt: 0,
-      lgd: '1',
-      ballon: null,
-      AmorType1: 'P&I',
-      AmorTerm1: 20,
-      loanProd1: 20,
-      TransferOption1: 'OPO',
-      IntRate1: this.formatPercent(0.0256),
-      PayAmnt1: this.formatCurrency(1000),
-      AmorType2:'P&I',
-      AmorTerm2: 20,
-      loanProd2: 20,
-      TransferOption2: 'OPO',
-      IntRate2: this.formatPercent(0.0256),
-      PayAmnt2: this.formatCurrency(1000),
-      AmorType3: 'P+I',
-      AmorTerm3: 20,
-      loanProd3: 20,
-      TransferOption3: 'OPO',
-      IntRate3: this.formatPercent(0.0256),
-      PayAmnt3: this.formatCurrency(863.74),
-      RecomRate1: this.formatPercent(0.0464),
-      RecomSpread1: this.formatPercent(0.0265),
-      Variance1: 0,
-      finalSpread1: this.formatPercent(0.0265),
-      RecomRate2: this.formatPercent(0.0464),
-      RecomSpread2: this.formatPercent(0.0265),
-      Variance2: 0,
-      finalSpread2: this.formatPercent(0.0265),
-      RecomRate3: this.formatPercent(0.0464),
-      RecomSpread3: this.formatPercent(0.0265),
-      Variance3: 0,
-      finalSpread3: this.formatPercent(0.0265),
-      COF1:'NA',
-      COF2:'NA',
-      COF3:'NA'
+      applicationName: this.pricing.applicationName,
+      phoneNumber: this.pricing.phoneNumber,
+      address: this.pricing.address,
+      loanDate:this.pricing.loanDate,
+      loanOfficer: this.pricing.loanOfficer,
+      branchOffice: this.pricing.branchOffice,
+      branchaddress: this.pricing.branchaddress,
+      calcDate:  this.pricing.calcDate,
+      fsaguarantee: this.pricing.fsaguarantee,
+      loantype: this.pricing.loantype,
+      lienpos: this.pricing.lienpos,
+      loanAmnt: this.pricing.loanAmnt,
+      paymentfreq: this.pricing.paymentfreq,
+      pd: this.pricing.pd,
+      ballonyrs: this.pricing.ballonyrs,
+      locateral: this.pricing.locateral,
+      feeAmnt: this.pricing.feeAmnt,
+      lgd: this.pricing.lgd,
+      ballon: this.pricing.ballon,
+      AmorType1: this.pricing.AmorType1,
+      AmorTerm1: this.pricing.AmorTerm1,
+      loanProd1: this.pricing.loanProd1,
+      TransferOption1: this.pricing.TransferOption1,
+      IntRate1: this.pricing.IntRate1,
+      PayAmnt1: this.pricing.PayAmnt1,
+      AmorType2:this.pricing.AmorType2,
+      AmorTerm2: this.pricing.AmorTerm2,
+      loanProd2: this.pricing.loanProd2,
+      TransferOption2: this.pricing.TransferOption2,
+      IntRate2: this.pricing.IntRate2,
+      PayAmnt2: this.pricing.PayAmnt2,
+      AmorType3: this.pricing.AmorType3,
+      AmorTerm3: this.pricing.AmorTerm3,
+      loanProd3: this.pricing.loanProd3,
+      TransferOption3: this.pricing.TransferOption3,
+      IntRate3: this.pricing.IntRate3,
+      PayAmnt3: this.pricing.PayAmnt3,
+      RecomRate1: this.pricing.RecomRate1,
+      RecomSpread1: this.pricing.RecomSpread1,
+      Variance1: this.pricing.Variance1,
+      finalSpread1: this.pricing.finalSpread2,
+      RecomRate2: this.pricing.RecomRate2,
+      RecomSpread2: this.pricing.RecomSpread2,
+      Variance2: this.pricing.Variance2,
+      finalSpread2: this.pricing.finalSpread2,
+      RecomRate3: this.pricing.RecomRate3,
+      RecomSpread3: this.pricing.RecomSpread3,
+      Variance3: this.pricing.Variance3,
+      finalSpread3: this.pricing.finalSpread3,
+      COF1:this.pricing.COF1,
+      COF2:this.pricing.COF2,
+      COF3:this.pricing.COF3
 
     })
 
